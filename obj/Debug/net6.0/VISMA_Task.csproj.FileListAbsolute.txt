@@ -13,3 +13,5 @@ C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\r
 C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.pdb
 C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.genruntimeconfig.cache
 C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\ref\VISMA_Task.dll
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.csproj.CopyComplete

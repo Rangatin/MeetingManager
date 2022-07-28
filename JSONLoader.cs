@@ -1,16 +1,21 @@
+using System.Text.Json;
+//using Newtonsoft.Json.Serialization.JsonConvert;
+
 namespace MeetingManager
 {
     public class JSONLoader
     {
         // meeting data is store in a JSON
 
-        public void LoadJson()
+        public List<Meeting> LoadJson(String filename)
         {
-            using (StreamReader r = new StreamReader("meetInfo.json"))
+            List<Meeting> meetingDetails;
+            using (StreamReader r = new StreamReader(filename))
             {
                 string json = r.ReadToEnd();
-                List<Meeting> meetingDetails = JsonConvert.DeserializeObject<List<Meeting>>(json);
+                meetingDetails = JsonSerializer.Deserialize<List<Meeting>>(json);
             }
+            return meetingDetails;
         }
     }
 }

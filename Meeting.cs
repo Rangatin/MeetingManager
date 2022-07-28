@@ -3,6 +3,7 @@ namespace MeetingManager
     public class Meeting {
     // meeting data is store in a JSON
 
+    
     private String name;
     private String responsiblePerson;
 
@@ -11,5 +12,8 @@ namespace MeetingManager
     private Type type;
     private DateTime StartDate;
     private DateTime EndDate;
+
+    public String getName() { return name;}
+
 }   
 }
