@@ -1,0 +1,15 @@
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\bin\Debug\net6.0\VISMA_Task.exe
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\bin\Debug\net6.0\VISMA_Task.deps.json
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\bin\Debug\net6.0\VISMA_Task.runtimeconfig.json
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\bin\Debug\net6.0\VISMA_Task.dll
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\bin\Debug\net6.0\VISMA_Task.pdb
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.csproj.AssemblyReference.cache
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.AssemblyInfoInputs.cache
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.AssemblyInfo.cs
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.csproj.CoreCompileInputs.cache
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.dll
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\refint\VISMA_Task.dll
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.pdb
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\VISMA_Task.genruntimeconfig.cache
+C:\Users\Kompiuteris\OneDrive\Desktop\Justo\VSCode\VISMA_Task\obj\Debug\net6.0\ref\VISMA_Task.dll

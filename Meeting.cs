@@ -1,8 +1,9 @@
-public class Meeting {
+namespace MeetingManager
+{
+    public class Meeting {
     // meeting data is store in a JSON
 
     private String name;
-
     private String responsiblePerson;
 
     private String description;
@@ -10,4 +11,5 @@ public class Meeting {
     private Type type;
     private DateTime StartDate;
     private DateTime EndDate;
+}   
 }
