@@ -1,5 +1,4 @@
-using System.Text.Json;
-//using Newtonsoft.Json.Serialization.JsonConvert;
+using Newtonsoft.Json;
 
 namespace MeetingManager
 {
@@ -7,13 +6,14 @@ namespace MeetingManager
     {
         // meeting data is store in a JSON
 
-        public List<Meeting> LoadJson(String filename)
+        public Meeting LoadJson(String filename)
         {
-            List<Meeting> meetingDetails;
+            //List<Meeting> meetingDetails;
+            Meeting meetingDetails;
             using (StreamReader r = new StreamReader(filename))
             {
-                string json = r.ReadToEnd();
-                meetingDetails = JsonSerializer.Deserialize<List<Meeting>>(json);
+                string json = File.ReadAllText(filename);
+                meetingDetails = JsonConvert.DeserializeObject<Meeting>(json)!;
             }
             return meetingDetails;
         }

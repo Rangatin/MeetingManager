@@ -1,19 +1,25 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace MeetingManager
 {
     public class Meeting {
-    // meeting data is store in a JSON
+        // meeting data is store in a JSON
 
-    
-    private String name;
-    private String responsiblePerson;
+        public String Name { get; set; }
 
-    private String description;
-    private Category category;
-    private Type type;
-    private DateTime StartDate;
-    private DateTime EndDate;
+        public String ResponsiblePerson { get; set; }
 
-    public String getName() { return name;}
+        public String Description { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Category Category { get; set; }
 
-}   
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Type Type { get; set; }
+        
+        public DateTime StartDate { get; set; }
+        
+        public DateTime EndDate { get; set; }
+     
+    }   
 }

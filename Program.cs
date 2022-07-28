@@ -5,9 +5,12 @@
         static void Main(string[] args)
         {
             JSONLoader jSONLoader = new JSONLoader();
-            List<Meeting> m = jSONLoader.LoadJson("meetings.json");
+            //List<Meeting> m = jSONLoader.LoadJson("meetings.json");
+            Meeting m = jSONLoader.LoadJson("meetings.json");
 
-            Console.WriteLine(m[0].getName());
+            //Meeting x = m[0];
+            Console.WriteLine($"Name: {m?.Name}");
+            Console.WriteLine($"Type: {m?.Type}");
         }
 
         public Meeting createMeeting() {
