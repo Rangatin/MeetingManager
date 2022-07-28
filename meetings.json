@@ -1,0 +1,13 @@
+{ 
+  "meetings": [
+    {
+  "Name": "Audriaus meetas",
+  "ResponsiblePerson": "Audrius",
+  "Description": "Grupes progreso aptarimas",
+  "Category": "Short",
+  "Type": "InPerson",
+  "StartDate": "2022-07-28T07:00:00.000Z",
+  "EndDate": "2022-07-28T07:15:00.000Z"
+    }
+  ]
+}

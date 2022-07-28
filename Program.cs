@@ -4,13 +4,14 @@
     {
         static void Main(string[] args)
         {
+            JSONLoader jSONLoader = new JSONLoader();
+            List<Meeting> m = jSONLoader.LoadJson("meetings.json");
 
-
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(m[0].getName());
         }
 
         public Meeting createMeeting() {
-             
+             return null;
         }
     }
 }
