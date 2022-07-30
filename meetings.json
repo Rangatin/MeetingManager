@@ -1,9 +1,38 @@
-{
-  "Name": "Audriaus meetas",
-  "ResponsiblePerson": "Audrius",
-  "Description": "Grupes progreso aptarimas",
-  "Category": "Short",
-  "Type": "InPerson",
-  "StartDate": "2022-07-28T07:00:00.000Z",
-  "EndDate": "2022-07-28T07:15:00.000Z"
-}
+[
+  {
+    "Id": 1,
+    "Name": "Audriaus meetas",
+    "ResponsiblePerson": "Audrius",
+    "Description": "Grupes progreso aptarimas",
+    "Category": "Short",
+    "Type": "InPerson",
+    "StartDate": "2022-07-28T07:00:00.000Z",
+    "EndDate": "2022-07-28T07:15:00.000Z",
+    "Participants": [],
+    "ParticipantCount": 0
+  },
+  {
+    "Id": 2,
+    "Name": "Dariaus meetas",
+    "ResponsiblePerson": "Darius",
+    "Description": "Grupes progreso aptarimas",
+    "Category": "Hub",
+    "Type": "InPerson",
+    "StartDate": "2022-07-28T07:00:00.000Z",
+    "EndDate": "2022-07-28T07:15:00.000Z",
+    "Participants": [],
+    "ParticipantCount": 0
+  },
+  {
+    "Id": 3,
+    "Name": "Tomo meetas",
+    "ResponsiblePerson": "Rugile",
+    "Description": "Grupes progreso aptarimas",
+    "Category": "CodeMonkey",
+    "Type": "InPerson",
+    "StartDate": "2022-07-28T07:00:00.000Z",
+    "EndDate": "2022-07-28T07:15:00.000Z",
+    "Participants": [],
+    "ParticipantCount": 0
+  }
+]

@@ -53,9 +53,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kompiuteris\\source\\repos\\MeetingManager\\VISMA_Task.csproj",
-      "projectName": "VISMA_Task",
-      "projectPath": "C:\\Users\\Kompiuteris\\source\\repos\\MeetingManager\\VISMA_Task.csproj",
+      "projectUniqueName": "C:\\Users\\Kompiuteris\\source\\repos\\MeetingManager\\MeetingManager.csproj",
+      "projectName": "MeetingManager",
+      "projectPath": "C:\\Users\\Kompiuteris\\source\\repos\\MeetingManager\\MeetingManager.csproj",
       "packagesPath": "C:\\Users\\Kompiuteris\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kompiuteris\\source\\repos\\MeetingManager\\obj\\",
       "projectStyle": "PackageReference",

@@ -6,14 +6,14 @@ namespace MeetingManager
     {
         // meeting data is store in a JSON
 
-        public Meeting LoadJson(String filename)
+        public List<Meeting> LoadJson(String filename)
         {
             //List<Meeting> meetingDetails;
-            Meeting meetingDetails;
+            List<Meeting> meetingDetails;
             using (StreamReader r = new StreamReader(filename))
             {
                 string json = File.ReadAllText(filename);
-                meetingDetails = JsonConvert.DeserializeObject<Meeting>(json)!;
+                meetingDetails = JsonConvert.DeserializeObject<List<Meeting>>(json)!;
             }
             return meetingDetails;
         }
