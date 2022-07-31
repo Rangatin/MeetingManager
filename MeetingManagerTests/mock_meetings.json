@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Id": 0,
     "Name": "Luko Android susitikimas",
@@ -47,8 +47,8 @@
       "LastName": "Velyte"
     },
     "Description": "Grupes progreso savaitinis aptarimas",
-    "Category": "Hub",
-    "Type": "Live",
+    "Category": "CodeMonkey",
+    "Type": "InPerson",
     "StartDate": "2022-07-31T12:00:00Z",
     "EndDate": "2022-07-31T20:15:00Z",
     "Attendees": [
@@ -79,7 +79,7 @@
       "LastName": "Maris"
     },
     "Description": "Savaitinis grupes progreso aptarimas",
-    "Category": "CodeMonkey",
+    "Category": "TeamBuilding",
     "Type": "Live",
     "StartDate": "2022-07-31T15:20:00",
     "EndDate": "2022-07-31T18:20:00",
@@ -97,7 +97,7 @@
         "LastName": "Tarasinas"
       }
     ],
-    "ParticipantCount": 2
+    "ParticipantCount": 3
   },
   {
     "Id": 4,
@@ -108,7 +108,7 @@
     },
     "Description": "Nera",
     "Category": "Short",
-    "Type": "Live",
+    "Type": "InPerson",
     "StartDate": "2022-07-31T08:00:00",
     "EndDate": "2022-07-31T08:30:00",
     "Attendees": [
@@ -149,22 +149,26 @@
   },
   {
     "Id": 6,
-    "Name": "Aurimo .NET meetas",
+    "Name": "Mykolo .NET aptarimas",
     "ResponsiblePerson": {
-      "FirstName": "Aurimas",
-      "LastName": "Basys"
+      "FirstName": "Mykolas",
+      "LastName": "Tarulikis"
     },
-    "Description": "Savaitinis susitikimas",
+    "Description": "Nera",
     "Category": "Hub",
     "Type": "Live",
-    "StartDate": "2022-07-31T00:00:00",
-    "EndDate": "2022-08-01T00:00:00",
+    "StartDate": "2022-07-31T20:20:00",
+    "EndDate": "2022-07-31T22:20:00",
     "Attendees": [
       {
-        "FirstName": "Aurimas",
-        "LastName": "Basys"
+        "FirstName": "Mykolas",
+        "LastName": "Tarulikis"
+      },
+      {
+        "FirstName": "Lukas",
+        "LastName": "Rukas"
       }
     ],
-    "ParticipantCount": 1
+    "ParticipantCount": 2
   }
 ]
