@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeetingManager
+namespace MeetingManager.Helpers
 {
     public class Commands
     {
@@ -30,7 +30,7 @@ namespace MeetingManager
                 EndDate = end,
                 Attendees = { r }
             };
-            
+
             return m;
         }
 
@@ -70,7 +70,7 @@ namespace MeetingManager
 
         public static void ListMeetings(List<Meeting> meetings)
         {
-            if(meetings == null)
+            if (meetings == null)
             {
                 Console.WriteLine("No results...");
             }
@@ -113,8 +113,8 @@ namespace MeetingManager
             }
             else if (m == null)
             {
-               Console.WriteLine("No meeting with this ID. Try again");
-               return;
+                Console.WriteLine("No meeting with this ID. Try again");
+                return;
             }
             else if (m.StartDate > DateTime.UtcNow)
             {
@@ -146,7 +146,7 @@ namespace MeetingManager
                     JSONLoader.ToJSON(meetings, "meetings.json");
                     Console.WriteLine($"Person {p.FirstName} {p.LastName} added to {m.Name} on {DateTime.Now}");
                 }
-            }  
+            }
         }
 
         public void RemoveFromMeeting(List<Meeting> meetings, Meeting m, Person person)
@@ -158,12 +158,12 @@ namespace MeetingManager
             }
 
             Person? p = m.Attendees.FirstOrDefault(x => x.Equals(person));
-            if(p == null)
+            if (p == null)
             {
                 Console.WriteLine("No such person in this meeting. Try again");
                 return;
             }
-            else if(p is ResponsiblePerson)
+            else if (p is ResponsiblePerson)
             {
                 Console.WriteLine("Cannot remove the responsible person");
                 return;
@@ -177,29 +177,35 @@ namespace MeetingManager
             }
         }
 
-        public List<Meeting> FilterByDescription(List<Meeting> meetings, string searchPhrase) {
+        public List<Meeting> FilterByDescription(List<Meeting> meetings, string searchPhrase)
+        {
             string[] keywords = searchPhrase.ToLower().Split(" ");
             return meetings.Where(m => ContainsAny(m?.Description, keywords)).ToList();
         }
-        public List<Meeting> FilterByResponsiblePerson(List<Meeting> meetings, string[] fullName) { 
+        public List<Meeting> FilterByResponsiblePerson(List<Meeting> meetings, string[] fullName)
+        {
             return meetings.Where(
                 m => m.ResponsiblePerson.FirstName.Equals(fullName[0]) && m.ResponsiblePerson.LastName.Equals(fullName[1])).ToList();
         }
 
-        public List<Meeting> FilterByCategory(List<Meeting> meetings, Category category) {
+        public List<Meeting> FilterByCategory(List<Meeting> meetings, Category category)
+        {
             return meetings.Where(m => m.Category == category).ToList();
         }
 
-        public List<Meeting> FilterByType(List<Meeting> meetings, Type type) { 
+        public List<Meeting> FilterByType(List<Meeting> meetings, Type type)
+        {
             return meetings.Where(m => m.Type == type).ToList();
         }
 
-        public List<Meeting> FilterByDates(List<Meeting> meetings, DateTime startDate, DateTime endDate) {
+        public List<Meeting> FilterByDates(List<Meeting> meetings, DateTime startDate, DateTime endDate)
+        {
             return meetings.Where(m => m.StartDate >= startDate && m.EndDate <= endDate).ToList();
         }
 
-        public List<Meeting> FilterByNumberOfAttendees(List<Meeting> meetings, int count) {
-            return meetings.Where(m => m.ParticipantCount >= count).ToList(); 
+        public List<Meeting> FilterByNumberOfAttendees(List<Meeting> meetings, int count)
+        {
+            return meetings.Where(m => m.ParticipantCount >= count).ToList();
         }
 
         private bool ContainsAny(string haystack, params string[] needles)

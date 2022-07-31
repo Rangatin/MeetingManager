@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeetingManager
+namespace MeetingManager.Helpers
 {
     public class IOHelper
     {
@@ -40,7 +40,7 @@ namespace MeetingManager
             Attendee? p = (Attendee?)GetPerson(false);
 
             Meeting? m = meetings.FirstOrDefault(m => m.Id == id);
-            if(p != null && m != null)
+            if (p != null && m != null)
             {
                 cmds.AddToMeeting(meetings, m, p);
             }
@@ -50,18 +50,18 @@ namespace MeetingManager
         {
             Console.Write("\nfirst and last name: ");
             string[] fullName = Console.ReadLine().Split(" ");
-            if(fullName.Length < 2)
+            if (fullName.Length < 2)
             {
-                return null; 
+                return null;
             }
-            else if(responsible)
+            else if (responsible)
             {
                 return new ResponsiblePerson { FirstName = fullName[0], LastName = fullName[1] };
             }
             else
             {
                 return new Attendee { FirstName = fullName[0], LastName = fullName[1] };
-            }   
+            }
         }
 
         public void DeleteMeetingIO(Commands cmds, List<Meeting> meetings)
@@ -69,7 +69,7 @@ namespace MeetingManager
             Console.Write("meeting id: ");
             int id = TryParseId(Console.ReadLine());
             ResponsiblePerson? p = (ResponsiblePerson?)GetPerson(true);
-            cmds.DeleteMeeting(meetings, id, p);   
+            cmds.DeleteMeeting(meetings, id, p);
         }
 
         public void RemoveFromMeetingIO(Commands cmds, List<Meeting> meetings)
@@ -89,9 +89,9 @@ namespace MeetingManager
             }
         }
 
-        private int TryParseId(String s)
+        private int TryParseId(string s)
         {
-            if (!Int32.TryParse(s, out int id))
+            if (!int.TryParse(s, out int id))
             {
                 Console.WriteLine("Incorrect meeting ID. Try again");
             }
@@ -114,7 +114,7 @@ namespace MeetingManager
             Commands.ListMeetings(cmds.FilterByCategory(meetings, c));
         }
 
-        private Category TryParseCategory(String s)
+        private Category TryParseCategory(string s)
         {
             if (!Enum.TryParse(s, out Category c))
             {
@@ -150,13 +150,13 @@ namespace MeetingManager
                            "enter type: ");
         }
 
-        private Type TryParseType(String s)
+        private Type TryParseType(string s)
         {
             if (!Enum.TryParse(s, out Type t))
             {
                 Console.WriteLine("Incorrect type. Try again");
             }
-            return t; 
+            return t;
         }
 
 
@@ -169,7 +169,7 @@ namespace MeetingManager
             Commands.ListMeetings(cmds.FilterByDates(meetings, start, end));
         }
 
-        private DateTime TryParseDate(String s)
+        private DateTime TryParseDate(string s)
         {
             if (!DateTime.TryParse(s, out DateTime d))
             {
@@ -182,7 +182,7 @@ namespace MeetingManager
         public void MeetingsByAttendeeCountIO(Commands cmds, List<Meeting> meetings)
         {
             Console.Write("count: ");
-            if (Int32.TryParse(Console.ReadLine(), out int count))
+            if (int.TryParse(Console.ReadLine(), out int count))
             {
                 Commands.ListMeetings(cmds.FilterByNumberOfAttendees(meetings, count));
             }

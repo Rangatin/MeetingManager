@@ -1,14 +1,14 @@
 using MeetingManager.Models;
 using Newtonsoft.Json;
 
-namespace MeetingManager
+namespace MeetingManager.Helpers
 {
     public class JSONLoader
     {
         public static List<Meeting> ParseJSON(string filename)
         {
             List<Meeting> meetingDetails;
-            using (StreamReader sr = new (filename))
+            using (StreamReader sr = new(filename))
             {
                 string json = sr.ReadToEnd();
                 meetingDetails = JsonConvert.DeserializeObject<List<Meeting>>(json)!;
