@@ -1,3 +1,4 @@
+using MeetingManager.Models;
 using Newtonsoft.Json;
 
 namespace MeetingManager

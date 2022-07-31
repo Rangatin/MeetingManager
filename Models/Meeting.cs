@@ -1,26 +1,27 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace MeetingManager
+namespace MeetingManager.Models
 {
-    public class Meeting {
+    public class Meeting
+    {
         // meeting data is store in a JSON
         public int Id { get; set; }
 
-        public String? Name { get; set; }
+        public string? Name { get; set; }
 
         public ResponsiblePerson? ResponsiblePerson { get; set; }
 
-        public String? Description { get; set; }
+        public string? Description { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public Category Category { get; set; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public Type Type { get; set; }
-        
+
         public DateTime StartDate { get; set; }
-        
+
         public DateTime EndDate { get; set; }
 
         public HashSet<Person> Attendees { get; set; } = new HashSet<Person>();
@@ -41,5 +42,5 @@ namespace MeetingManager
                    EqualityComparer<HashSet<Person>>.Default.Equals(Attendees, meeting.Attendees) &&
                    ParticipantCount == meeting.ParticipantCount;
         }
-    }   
+    }
 }

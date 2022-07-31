@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeetingManager
+namespace MeetingManager.Models
 {
-    internal class Attendee : Person
+    public class Attendee : Person
     {
     }
 }

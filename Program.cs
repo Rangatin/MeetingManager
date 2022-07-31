@@ -1,4 +1,6 @@
-﻿namespace MeetingManager
+﻿using MeetingManager.Models;
+
+namespace MeetingManager
 {
     class Program
     {

@@ -1,4 +1,4 @@
-﻿using MeetingManager;
+﻿using MeetingManager.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,9 +114,8 @@ namespace MeetingManager
                 "\nexit - exit the program");
         }
 
-        public void AddToMeeting(List<Meeting> meetings, int id)
+        public void AddToMeeting(List<Meeting> meetings, int id, Person p)
         {
-            Person p = IOHelper.GetPerson();
             if (p == null)
             {
                 return;
@@ -161,7 +160,7 @@ namespace MeetingManager
             }  
         }
 
-        public void RemoveFromMeeting(List<Meeting> meetings, Meeting m)
+        public void RemoveFromMeeting(List<Meeting> meetings, Meeting m, Person person)
         {
             if (m == null)
             {
@@ -169,11 +168,9 @@ namespace MeetingManager
                 return;
             }
 
-            ShowAttendees(m);
+            //ShowAttendees(m);
 
-            Person? tempP = IOHelper.GetPerson();
-            if (tempP == null) return; 
-            Person? p = m.Attendees.FirstOrDefault(x => x.Equals(tempP));
+            Person? p = m.Attendees.FirstOrDefault(x => x.Equals(person));
             if(p == null)
             {
                 Console.WriteLine("No such person in this meeting. Try again");

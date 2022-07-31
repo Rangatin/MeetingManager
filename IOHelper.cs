@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MeetingManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,9 @@ namespace MeetingManager
         {
             Console.Write("meeting id: ");
             int id = TryParseId(Console.ReadLine());
-            cmds.AddToMeeting(meetings, id);
+            Attendee? p = (Attendee?)GetPerson();
+
+            cmds.AddToMeeting(meetings, id, p);
         }
 
         public static Person? GetPerson()
@@ -64,7 +67,12 @@ namespace MeetingManager
             Console.Write("meeting id: ");
             int id = TryParseId(Console.ReadLine());
             Meeting? m = meetings.FirstOrDefault(m => m.Id == id);
-            cmds.RemoveFromMeeting(meetings, m);
+
+            Person? p = IOHelper.GetPerson();
+            if (p != null)
+            {
+                cmds.RemoveFromMeeting(meetings, m, p);
+            }
         }
 
         private int TryParseId(String s)
