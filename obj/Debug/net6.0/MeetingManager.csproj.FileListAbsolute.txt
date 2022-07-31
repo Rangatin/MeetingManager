@@ -15,3 +15,4 @@ C:\Users\Kompiuteris\source\repos\MeetingManager\obj\Debug\net6.0\refint\Meeting
 C:\Users\Kompiuteris\source\repos\MeetingManager\obj\Debug\net6.0\MeetingManager.pdb
 C:\Users\Kompiuteris\source\repos\MeetingManager\obj\Debug\net6.0\MeetingManager.genruntimeconfig.cache
 C:\Users\Kompiuteris\source\repos\MeetingManager\obj\Debug\net6.0\ref\MeetingManager.dll
+C:\Users\Kompiuteris\source\repos\MeetingManager\bin\Debug\net6.0\meetings.json

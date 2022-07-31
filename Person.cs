@@ -8,7 +8,19 @@ namespace MeetingManager
 {
     public class Person
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Person person &&
+                   FirstName == person.FirstName &&
+                   LastName == person.LastName;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(FirstName, LastName);
+        }
     }
 }

@@ -4,28 +4,74 @@
     {
         static void Main(string[] args)
         {
-            JSONLoader jSONLoader = new();
-            List<Meeting> meetings = jSONLoader.LoadJson("meetings.json");
-            //Meeting m = jSONLoader.LoadJson("meetings.json");
-
-            //Meeting x = m[0];
-
+            List<Meeting> meetings = JSONLoader.ParseJSON("meetings.json");
             Commands cmds = new();
-            //Commands.ListMeetings(meetings);
+            IOHelper ioHelper = new();
+            string? input;
 
-            //filter by category
-            Category c = Category.CodeMonkey;
-            Console.WriteLine($"Categroy: {c}");
-            Commands.ListMeetings(cmds.FilterByCategory(meetings, c));
+            Console.WriteLine("To start press ENTER or type help");
+            do
+            {
+                input = Console.ReadLine();
+                switch (input)
+                {
+                    case "new meeting":
+                        ioHelper.CreateMeetingIO(cmds, meetings);
+                        break;
 
+                    case "delete meeting":
+                        Commands.ListMeetings(meetings);
+                        ioHelper.DeleteMeetingIO(cmds, meetings);
+                        break;
 
-            //filter by type
+                    case "add person to meeting":
+                        Commands.ListMeetings(meetings);
+                        ioHelper.AddToMeeting(cmds, meetings);
+                        break;
 
-            Category c = Category.CodeMonkey;
-            Console.WriteLine($"Categroy: {c}");
-            Commands.ListMeetings(cmds.FilterByCategory(meetings, c));
+                    case "remove person from meeting":
+                        Commands.ListMeetings(meetings);
+                        ioHelper.RemoveFromMeetingIO(cmds, meetings);
+                        break;
 
-            //filter by startend date
+                    case "list meetings":
+                        Commands.ListMeetings(meetings);
+                        break;
+
+                    case "meetings by description":
+                        Commands.ListMeetings(meetings);
+                        Console.Write("enter phrase: ");
+                        string? searchPhrase = Console.ReadLine();
+                        Commands.ListMeetings(cmds.FilterByDescription(meetings, searchPhrase));
+                        break;
+
+                    case "meetings by responsible person":
+                        Commands.ListMeetings(meetings);
+                        ioHelper.MeetingsByResponsiblePersonIO(cmds, meetings);
+                        break;
+
+                    case "meetings by category":
+                        ioHelper.MeetingsByCategoryIO(cmds, meetings);
+                        break;
+
+                    case "meetings by type":
+                        ioHelper.MeetingsByTypeIO(cmds, meetings);
+                        break;
+
+                    case "meetings by dates":
+                        ioHelper.MeetingsByDateIO(cmds, meetings);
+                        break;
+
+                    case "meetings by attendee count":
+                        ioHelper.MeetingsByAttendeeCountIO(cmds, meetings);
+                        break;
+
+                    default:
+                        Commands.Help();
+                        break;
+                }
+                Console.Write("\ncmd: ");
+            } while (!input.Equals("exit"));   
         }
     }
 }

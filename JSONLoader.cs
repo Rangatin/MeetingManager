@@ -4,18 +4,24 @@ namespace MeetingManager
 {
     public class JSONLoader
     {
-        // meeting data is store in a JSON
-
-        public List<Meeting> LoadJson(String filename)
+        public static List<Meeting> ParseJSON(string filename)
         {
-            //List<Meeting> meetingDetails;
             List<Meeting> meetingDetails;
-            using (StreamReader r = new StreamReader(filename))
+            using (StreamReader sr = new (filename))
             {
-                string json = File.ReadAllText(filename);
+                string json = sr.ReadToEnd();
                 meetingDetails = JsonConvert.DeserializeObject<List<Meeting>>(json)!;
             }
             return meetingDetails;
+        }
+
+        public static void ToJSON(List<Meeting> meetings, string filename)
+        {
+            using (StreamWriter sw = new(filename))
+            {
+                string output = JsonConvert.SerializeObject(meetings);
+                sw.Write(output);
+            }
         }
     }
 }

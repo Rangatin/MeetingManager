@@ -146,25 +146,5 @@
       }
     ],
     "ParticipantCount": 2
-  },
-  {
-    "Id": 6,
-    "Name": "Aurimo .NET meetas",
-    "ResponsiblePerson": {
-      "FirstName": "Aurimas",
-      "LastName": "Basys"
-    },
-    "Description": "Savaitinis susitikimas",
-    "Category": "Hub",
-    "Type": "Live",
-    "StartDate": "2022-07-31T00:00:00",
-    "EndDate": "2022-08-01T00:00:00",
-    "Attendees": [
-      {
-        "FirstName": "Aurimas",
-        "LastName": "Basys"
-      }
-    ],
-    "ParticipantCount": 1
   }
 ]
