@@ -16,3 +16,8 @@ Meeting manager - a console application to manage Visma’s internal meetings us
 dotnet run
 ```
 * To continue, follow the instructions given by the program
+
+IMPORTANT
+
+For the tests to be executed properly, the folder `MeetingManagerTests` needs to be a project itself (if you want to run tests in Visual Studio).
+Therefore, it is advisable to dowload it together with the main code and then transform it into a project.
