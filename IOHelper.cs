@@ -37,12 +37,16 @@ namespace MeetingManager
         {
             Console.Write("meeting id: ");
             int id = TryParseId(Console.ReadLine());
-            Attendee? p = (Attendee?)GetPerson();
+            Attendee? p = (Attendee?)GetPerson(false);
 
-            cmds.AddToMeeting(meetings, id, p);
+            Meeting? m = meetings.FirstOrDefault(m => m.Id == id);
+            if(p != null && m != null)
+            {
+                cmds.AddToMeeting(meetings, m, p);
+            }
         }
 
-        public static Person? GetPerson()
+        public static Person? GetPerson(bool responsible)
         {
             Console.Write("\nfirst and last name: ");
             string[] fullName = Console.ReadLine().Split(" ");
@@ -50,16 +54,22 @@ namespace MeetingManager
             {
                 return null; 
             }
-            else return new Person { FirstName = fullName[0], LastName = fullName[1] };
+            else if(responsible)
+            {
+                return new ResponsiblePerson { FirstName = fullName[0], LastName = fullName[1] };
+            }
+            else
+            {
+                return new Attendee { FirstName = fullName[0], LastName = fullName[1] };
+            }   
         }
 
         public void DeleteMeetingIO(Commands cmds, List<Meeting> meetings)
         {
             Console.Write("meeting id: ");
             int id = TryParseId(Console.ReadLine());
-            Console.Write("enter your first and last name: ");
-            string[] fullName = Console.ReadLine().Split(" ");
-            cmds.DeleteMeeting(meetings, id, fullName);   
+            ResponsiblePerson? p = (ResponsiblePerson?)GetPerson(true);
+            cmds.DeleteMeeting(meetings, id, p);   
         }
 
         public void RemoveFromMeetingIO(Commands cmds, List<Meeting> meetings)
@@ -68,10 +78,14 @@ namespace MeetingManager
             int id = TryParseId(Console.ReadLine());
             Meeting? m = meetings.FirstOrDefault(m => m.Id == id);
 
-            Person? p = IOHelper.GetPerson();
-            if (p != null)
+            if (m != null)
             {
-                cmds.RemoveFromMeeting(meetings, m, p);
+                ShowAttendees(m);
+                Person? p = GetPerson(true);
+                if (p != null)
+                {
+                    cmds.RemoveFromMeeting(meetings, m, p);
+                }
             }
         }
 
@@ -175,6 +189,15 @@ namespace MeetingManager
             else
             {
                 Console.WriteLine("Incorrect count value. Try again");
+            }
+        }
+
+        private void ShowAttendees(Meeting m)
+        {
+            Console.WriteLine("Currently in this meeting: ");
+            foreach (Person p in m.Attendees)
+            {
+                Console.WriteLine($"{p.FirstName} {p.LastName}");
             }
         }
     }

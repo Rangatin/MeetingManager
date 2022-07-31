@@ -44,7 +44,7 @@ namespace MeetingManager
             }
         }
 
-        public void DeleteMeeting(List<Meeting> meetings, int id, string[] fullName)
+        public void DeleteMeeting(List<Meeting> meetings, int id, Person person)
         {
             Meeting? m = meetings.FirstOrDefault(m => m.Id == id);
             if (m == null)
@@ -54,7 +54,7 @@ namespace MeetingManager
             }
             else
             {
-                Person? p = m.Attendees.FirstOrDefault(x => x.FirstName.Equals(fullName[0]) && x.LastName.Equals(fullName[1]) && x is ResponsiblePerson);
+                Person? p = m.Attendees.FirstOrDefault(x => x.Equals(person) && x is ResponsiblePerson);
                 if (p == null)
                 {
                     Console.WriteLine("You are not the responsible person of this meeting");
@@ -67,15 +67,6 @@ namespace MeetingManager
                 }
             }
         }
-
-        private void ShowAttendees(Meeting m)
-        {
-            Console.WriteLine("Currently in this meeting: ");
-           foreach (Person p in m.Attendees){
-                Console.WriteLine($"{p.FirstName} {p.LastName}");
-           }
-        }
-
 
         public static void ListMeetings(List<Meeting> meetings)
         {
@@ -114,15 +105,13 @@ namespace MeetingManager
                 "\nexit - exit the program");
         }
 
-        public void AddToMeeting(List<Meeting> meetings, int id, Person p)
+        public void AddToMeeting(List<Meeting> meetings, Meeting m, Person p)
         {
             if (p == null)
             {
                 return;
             }
-
-            Meeting? m = meetings.FirstOrDefault(m => m.Id == id);
-            if (m == null)
+            else if (m == null)
             {
                Console.WriteLine("No meeting with this ID. Try again");
                return;
@@ -167,8 +156,6 @@ namespace MeetingManager
                 Console.WriteLine("No meeting with this ID. Try again");
                 return;
             }
-
-            //ShowAttendees(m);
 
             Person? p = m.Attendees.FirstOrDefault(x => x.Equals(person));
             if(p == null)
